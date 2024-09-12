@@ -21,7 +21,7 @@ import br.com.locadoradeternos.api_rest_locadora.service.TernoUpdateService;
 import br.com.locadoradeternos.api_rest_locadora.service.TernoWriteService;
 
 @RestController /* Define a classe como um controlador REST para lidar com as requisições  */
-@RequestMapping("/terno")
+@RequestMapping("/api")
 public class TernoController {
 
     @Autowired
@@ -37,35 +37,35 @@ public class TernoController {
     private TernoDeleteService ternoDeleteService;
 
     // Listando todos os ternos no banco de dados
-    @GetMapping("/api/ternos")
+    @GetMapping("/ternos")
     public ResponseEntity<List<Ternos>> listaTodosOsTernos(){
         List<Ternos> todosOsTernos = ternoReadService.listaTernos();
         return ResponseEntity.ok().body(todosOsTernos);
     }
 
     // Buscando um único terno pelo id
-    @GetMapping("/api/ternos/{id}")
+    @GetMapping("/ternos/{id}")
     public ResponseEntity<Ternos> encontrarTernoPeloId(@PathVariable Long id){
         Ternos terno = ternoReadService.buscarTernoPeloId(id);
         return ResponseEntity.ok().body(terno);
     }
 
     // Cadastrar um terno no banco de dados
-    @PostMapping("/api/ternos")
+    @PostMapping("/ternos")
     ResponseEntity<Ternos> cadastrarNovoTerno(@RequestBody Ternos terno){
         Ternos novoTerno = ternoWriteService.cadastrarNovoTerno(terno);
         return ResponseEntity.ok().body(novoTerno);
     }
 
     // Alterar dados de um terno
-    @PutMapping("/api/ternos/{id}")
+    @PutMapping("/ternos/{id}")
     public ResponseEntity<Ternos> updateTerno(@PathVariable Long id, @RequestBody Ternos ternoAlterado){
         Ternos terno = ternoUpdateService.atualizaDadosDoTerno(id, ternoAlterado);
         return ResponseEntity.ok().body(terno);
     }
 
     // Deletando um terno da base de dados
-    @DeleteMapping("/api/ternos/{id}")
+    @DeleteMapping("/ternos/{id}")
     public ResponseEntity<Boolean> deletarPeloId(@PathVariable Long id){
         Boolean sinaliza = ternoDeleteService.deletarTernoPeloId(id);
         return ResponseEntity.ok().body(sinaliza);

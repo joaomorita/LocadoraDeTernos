@@ -1,7 +1,6 @@
 package br.com.locadoradeternos.api_rest_locadora.service;
 
 import org.springframework.stereotype.Service;
-import br.com.locadoradeternos.api_rest_locadora.model.Ternos;
 import br.com.locadoradeternos.api_rest_locadora.repository.TernoRepository;
 
 import java.util.NoSuchElementException;
