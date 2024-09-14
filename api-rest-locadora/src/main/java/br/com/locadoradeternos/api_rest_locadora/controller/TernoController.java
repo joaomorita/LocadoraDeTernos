@@ -3,6 +3,7 @@ package br.com.locadoradeternos.api_rest_locadora.controller;
 
 import java.util.List;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,19 +23,15 @@ import br.com.locadoradeternos.api_rest_locadora.service.TernoWriteService;
 
 @RestController /* Define a classe como um controlador REST para lidar com as requisições  */
 @RequestMapping("/api")
+@RequiredArgsConstructor /* Cria construtor com variaveis de inicialização obrigatória */
 public class TernoController {
 
-    @Autowired
-    private TernoReadService ternoReadService;
 
-    @Autowired
-    private TernoWriteService ternoWriteService;
+    private final TernoReadService ternoReadService;
+    private final TernoWriteService ternoWriteService;
+    private final TernoUpdateService ternoUpdateService;
+    private final TernoDeleteService ternoDeleteService;
 
-    @Autowired
-    private TernoUpdateService ternoUpdateService;
-
-    @Autowired
-    private TernoDeleteService ternoDeleteService;
 
     // Listando todos os ternos no banco de dados
     @GetMapping("/ternos")
