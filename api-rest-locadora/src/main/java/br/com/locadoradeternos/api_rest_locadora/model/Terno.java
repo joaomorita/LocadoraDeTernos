@@ -25,7 +25,6 @@ public class Terno {
     private Long id;
 
     @Pattern(regexp = "^(P|M|G|GG)$", message = "Tamanho informado é inválido: P, M, G, GG")
-    @NotBlank(message = "É obrigatório informar o tamanho do terno: P, M, G, GG")
     private String tamanho;
 
     @NotBlank(message = "Informe a cor do terno")
