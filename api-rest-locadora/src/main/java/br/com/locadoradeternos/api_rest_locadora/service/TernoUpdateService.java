@@ -1,7 +1,7 @@
 package br.com.locadoradeternos.api_rest_locadora.service;
 
 import org.springframework.stereotype.Service;
-import br.com.locadoradeternos.api_rest_locadora.model.Ternos;
+import br.com.locadoradeternos.api_rest_locadora.model.Terno;
 import br.com.locadoradeternos.api_rest_locadora.repository.TernoRepository;
 
 @Service
@@ -16,8 +16,8 @@ public class TernoUpdateService {
     }
 
     // Método para atualizar dados de um terno
-    public Ternos atualizaDadosDoTerno(Long id, Ternos ternoComDadosAlterados) {
-        Ternos ternoAtual = ternoReadService.buscarTernoPeloId(id); // Reutiliza a lógica de busca
+    public Terno atualizaDadosDoTerno(Long id, Terno ternoComDadosAlterados) {
+        Terno ternoAtual = ternoReadService.buscarTernoPeloId(id); // Reutiliza a lógica de busca
         ternoAtual.setCor(ternoComDadosAlterados.getCor());
         ternoAtual.setDisponivel(ternoComDadosAlterados.getDisponivel());
         ternoAtual.setTamanho(ternoComDadosAlterados.getTamanho());

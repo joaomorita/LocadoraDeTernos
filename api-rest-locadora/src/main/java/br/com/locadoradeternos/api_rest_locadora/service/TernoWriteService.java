@@ -1,7 +1,7 @@
 package br.com.locadoradeternos.api_rest_locadora.service;
 
 import org.springframework.stereotype.Service;
-import br.com.locadoradeternos.api_rest_locadora.model.Ternos;
+import br.com.locadoradeternos.api_rest_locadora.model.Terno;
 import br.com.locadoradeternos.api_rest_locadora.repository.TernoRepository;
 
 // Método para cadastrar novo terno
@@ -14,7 +14,7 @@ public class TernoWriteService {
         this.ternoRepository = ternoRepository;
     }
 
-    public Ternos cadastrarNovoTerno(Ternos terno) {
+    public Terno cadastrarNovoTerno(Terno terno) {
         return ternoRepository.save(terno);
     }
 }

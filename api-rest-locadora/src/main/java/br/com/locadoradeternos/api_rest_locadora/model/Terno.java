@@ -1,17 +1,12 @@
 package br.com.locadoradeternos.api_rest_locadora.model;
 
-import com.fasterxml.jackson.annotation.JsonSetter;
-
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,7 +18,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor /* Gerando um construtor sem parametros */
-public class Ternos {
+public class Terno {
 
     @Id /* define o id como uma primary key */
     @GeneratedValue(strategy = GenerationType.IDENTITY) /* Os valores vão ser únicos, gerados automaticamentes */

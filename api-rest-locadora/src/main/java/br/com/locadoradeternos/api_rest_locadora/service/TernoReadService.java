@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import br.com.locadoradeternos.api_rest_locadora.exception.TernoNotFoundException;
-import br.com.locadoradeternos.api_rest_locadora.model.Ternos;
+import br.com.locadoradeternos.api_rest_locadora.model.Terno;
 import br.com.locadoradeternos.api_rest_locadora.repository.TernoRepository;
 
 @Service
@@ -18,12 +18,12 @@ public class TernoReadService {
     }
 
     // Método para listar ternos
-    public List<Ternos> listaTernos() {
+    public List<Terno> listaTernos() {
         return ternoRepository.findAll();
     }
 
     // Método para buscar terno pelo ID
-    public Ternos buscarTernoPeloId(Long id) {
+    public Terno buscarTernoPeloId(Long id) {
         return ternoRepository.findById(id).orElseThrow(() -> new TernoNotFoundException(id));
     }
 }

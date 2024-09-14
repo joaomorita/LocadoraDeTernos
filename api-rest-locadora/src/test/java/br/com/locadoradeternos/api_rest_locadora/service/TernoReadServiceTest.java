@@ -6,7 +6,7 @@ import static org.mockito.Mockito.*;
 import java.util.Optional;
 
 import br.com.locadoradeternos.api_rest_locadora.exception.TernoNotFoundException;
-import br.com.locadoradeternos.api_rest_locadora.model.Ternos;
+import br.com.locadoradeternos.api_rest_locadora.model.Terno;
 import br.com.locadoradeternos.api_rest_locadora.repository.TernoRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,7 +30,7 @@ public class TernoReadServiceTest {
     @Test
     void testBuscarTernoPeloId_Encontrado() {
         // Simulando um terno existente no repositório
-        Ternos terno = new Ternos();
+        Terno terno = new Terno();
         terno.setId(1L);
         terno.setCor("Preto");
 
@@ -38,7 +38,7 @@ public class TernoReadServiceTest {
         when(ternoRepository.findById(1L)).thenReturn(Optional.of(terno));
 
         // Chama o método que estamos testando
-        Ternos result = ternoReadService.buscarTernoPeloId(1L);
+        Terno result = ternoReadService.buscarTernoPeloId(1L);
 
         // Verifica se o resultado é o esperado
         assertEquals(1L, result.getId());
