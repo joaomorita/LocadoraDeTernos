@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "151436af-384a-4657-948c-e5d3a7cdf456",
+		"name": "Loca Ternos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38250350"
+	},
+	"item": [
+		{
+			"name": "Lista de ternos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/ternos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ternos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionando terno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tamanho\": \"P\",\r\n    \"cor\": \"vermelho\",\r\n    \"disponivel\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/ternos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ternos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscando pelo ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/ternos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ternos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

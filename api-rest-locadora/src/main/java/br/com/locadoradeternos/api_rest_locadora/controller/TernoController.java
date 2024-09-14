@@ -57,7 +57,7 @@ public class TernoController {
         return ResponseEntity.ok().body(novoTerno);
     }
 
-    // Alterar dados de um terno
+    // Alterar dados de um terno /* TODO: Trocar nome 'updateTerno' | usar verbo no atualizaDadosDoTerno*/
     @PutMapping("/ternos/{id}")
     public ResponseEntity<Ternos> updateTerno(@PathVariable Long id, @RequestBody Ternos ternoAlterado){
         Ternos terno = ternoUpdateService.atualizaDadosDoTerno(id, ternoAlterado);

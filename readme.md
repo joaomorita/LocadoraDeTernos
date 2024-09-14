@@ -16,7 +16,6 @@ Antes de rodar o projeto localmente, é necessário o download das seguintes fer
 
 - [JDK 17](https://www.oracle.com/br/java/technologies/downloads/#java17)
 - [MySql](https://dev.mysql.com/downloads/installer/)
-- [Maven](https://maven.apache.org/install.html)
 
 ## Configuração do banco de dados
 
@@ -26,45 +25,54 @@ Antes de rodar o projeto localmente, é necessário o download das seguintes fer
 
 2. Configure usuário e senha para acessar o banco de dados. Por padrão o usuário é 'root' e a senha deixada em branco.
 
-3. No arquivo C:\Users\joaom\Documents\LocadoraDeTernos\api-rest-locadora\src\main\resources\applicationi.properties configure da seguinte forma:
+3. No arquivo `src\main\resources\applicationi.properties` configure da seguinte forma:
 
+   ```
     spring.datasource.url=jdbc:mysql://localhost:3306/locadoradeternos
     spring.datasource.username=root
     spring.datasource.password=
     spring.jpa.show-sql=true
     spring.jpa.hibernate.ddl-auto=update
+   ```
 
-4. Criar a database MySql com 'create database nomeDaBase;'
+4. Criar o database MySql com 'create database locadoradeternos;'
 
-5. Rodar o arquivo arquivo 'ApiRestLocadoraApplication.java'
+5. Executar a aplicação com os comandos abaixo:
+    ```
+   ./mvnw clean install
+   ./mvnw spring-boot:run
+   ```
 
 ## Endpoints da API
 
-# Listar todos os ternos:
+Abaixo detalhes da APIs implementadas. Para facilitar a utilização você pode baixar uma collection do postman
+ [clicando aqui](Loca%20Ternos.postman_collection.json).
+
+### Listar todos os ternos:
 
 - URL: /api/ternos
 - Método: GET
 - Resposta: Retorna uma lista de todos os ternos cadastrados.
 
-# Buscar terno pelo número de id:
+### Buscar terno pelo número de id:
 
 - URL: /api/ternos/{id}
 - Método: GET
 - Resposta: Retorna o terno específico do id indicado.
 
-# Cadastrar novo terno:
+### Cadastrar novo terno:
 
 - URL: /api/ternos
 - Método: POST
 - Reposta: Retorna o terno cadastrado
 
-# Atualizar terno:
+### Atualizar terno:
 
 - URL: api/ternos/{id}
 - Método: PUT
 - Resposta: Atualiza os dados do terno especificado.
 
-# Deletar um terno:
+### Deletar um terno:
 
 - URL: api/ternos/{id}
 - Método: DELETE
