@@ -26,4 +26,9 @@ public class TernoReadService {
     public Terno buscarTernoPeloId(Long id) {
         return ternoRepository.findById(id).orElseThrow(() -> new TernoNotFoundException(id));
     }
+
+    // Método para buscar ternos disponiveis
+    public List<Terno> TernosDisponiveis(){
+        return ternoRepository.findByDisponivelTrue();
+    }
 }

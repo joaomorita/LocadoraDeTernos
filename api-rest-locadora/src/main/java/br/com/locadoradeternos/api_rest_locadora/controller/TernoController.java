@@ -46,6 +46,13 @@ public class TernoController {
         return ResponseEntity.ok().body(terno);
     }
 
+    // Buscando apenas ternos disponiveis
+    @GetMapping("/ternos/disponiveis")
+    public ResponseEntity<List<Terno>> listarTernosDisponiveis(){
+        List<Terno> ternosDisponiveis = ternoReadService.TernosDisponiveis();
+        return ResponseEntity.ok().body(ternosDisponiveis);
+    }
+
     // Cadastrar um terno no banco de dados
     @PostMapping("/ternos")
     ResponseEntity<Terno> cadastrarNovoTerno(@RequestBody Terno terno){
@@ -53,9 +60,9 @@ public class TernoController {
         return ResponseEntity.ok().body(novoTerno);
     }
 
-    // Alterar dados de um terno /* TODO: Trocar nome 'updateTerno' | usar verbo no atualizaDadosDoTerno*/
+    // Alterar dados de um terno
     @PutMapping("/ternos/{id}")
-    public ResponseEntity<Terno> updateTerno(@PathVariable Long id, @RequestBody Terno ternoAlterado){
+    public ResponseEntity<Terno> atualizaDadosDoTerno(@PathVariable Long id, @RequestBody Terno ternoAlterado){
         Terno terno = ternoUpdateService.atualizaDadosDoTerno(id, ternoAlterado);
         return ResponseEntity.ok().body(terno);
     }
