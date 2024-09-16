@@ -15,8 +15,8 @@ import lombok.Setter;
 
 
 @Entity /* Entity para estabelecer uma ligação da entidade com a tabela no banco de dados */
-@Getter
-@Setter
+@Getter // Gera os métodos GET
+@Setter // Gera os métodos SET
 @NoArgsConstructor /* Gerando um construtor sem parametros */
 public class Terno {
 
@@ -24,12 +24,15 @@ public class Terno {
     @GeneratedValue(strategy = GenerationType.IDENTITY) /* Os valores vão ser únicos, gerados automaticamentes */
     private Long id;
 
+    // O campo tamanho deve corresponder a P, M, G, GG
     @Pattern(regexp = "^(P|M|G|GG)$", message = "Tamanho informado é inválido: P, M, G, GG")
     private String tamanho;
 
+    // Não deixa o campo cor ser uma string em branco
     @NotBlank(message = "Informe a cor do terno")
     private String cor;
 
+    // Não deixa o campo disponivel ser nulo
     @NotNull(message = "Informe se o terno está disponível: true ou false")
     private Boolean disponivel;
 

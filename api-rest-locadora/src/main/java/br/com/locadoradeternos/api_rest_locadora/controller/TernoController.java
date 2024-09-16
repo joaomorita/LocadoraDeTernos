@@ -34,8 +34,8 @@ public class TernoController {
 
     // Listando todos os ternos no banco de dados
     @GetMapping("/ternos")
-    public ResponseEntity<List<Terno>> listaTodosOsTernos(){
-        List<Terno> todosOsTernos = ternoReadService.listaTernos();
+    public ResponseEntity<List<Terno>> listarTodosOsTernos(){
+        List<Terno> todosOsTernos = ternoReadService.listaTernos(); // chama o ternoReadService e usa o metodo listaTernos para retornar todos os ternos
         return ResponseEntity.ok().body(todosOsTernos);
     }
 
