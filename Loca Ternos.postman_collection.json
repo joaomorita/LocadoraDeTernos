@@ -26,13 +26,41 @@
 			"response": []
 		},
 		{
+			"name": "Buscando pelo ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/ternos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ternos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ternos Disponiveis",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
 			"name": "Adicionando terno",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"tamanho\": \"P\",\r\n    \"cor\": \"vermelho\",\r\n    \"disponivel\": true\r\n}",
+					"raw": "{\r\n    \"tamanho\": \"GG\",\r\n    \"cor\": \"Verde\",\r\n    \"disponivel\": true\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -54,12 +82,21 @@
 			"response": []
 		},
 		{
-			"name": "Buscando pelo ID",
+			"name": "Atualizando",
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"tamanho\": \"G\",\r\n    \"cor\": \"Azul Marinho\",\r\n    \"disponivel\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/api/ternos/1",
+					"raw": "localhost:8080/api/ternos/4",
 					"host": [
 						"localhost"
 					],
@@ -67,9 +104,17 @@
 					"path": [
 						"api",
 						"ternos",
-						"1"
+						"4"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletando terno",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
