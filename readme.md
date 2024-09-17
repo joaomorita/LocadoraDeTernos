@@ -60,6 +60,12 @@ Abaixo detalhes da APIs implementadas. Para facilitar a utilização você pode 
 - Método: GET
 - Resposta: Retorna o terno específico do id indicado.
 
+### Buscar os ternos disponíveis:
+
+- URL: /api/ternos/disponiveis
+- Método: GET
+- Resposta: Retorn todos os ternos que estão "disponivel": true no banco de dados
+
 ### Cadastrar novo terno:
 
 - URL: /api/ternos

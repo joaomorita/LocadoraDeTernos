@@ -203,10 +203,15 @@ class TernoControllerTest {
         Terno ternoExistente = ternoRepository.findAll().get(0); // Pegar o terno na posição 0
 
         mockMvc.perform(delete("/api/ternos/{id}", ternoExistente.getId())) // Usando o DELETE
-                .andExpect(status().isOk()) // Verifica se o status é 200
-                .andExpect(jsonPath("$").value(true)); // Verifica se o boolean é true
+                .andExpect(status().isNoContent());// Verifica se o status é 204
 
         List<Terno> ternosRestantes = ternoRepository.findAll(); // Busca todos os ternos no repo
         assertThat(ternosRestantes).isEmpty(); // Verifica se esta vazio
+    }
+
+    @Test
+    void testDeletaTernoInexistente() throws Exception {
+        mockMvc.perform(delete("/api/ternos/{id}", 999L)) // Verificando um id inexistente
+                .andExpect(status().isNotFound()); // Deve retornar 404 (Not found)
     }
 }

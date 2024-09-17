@@ -69,8 +69,8 @@ public class TernoController {
 
     // Deletando um terno da base de dados
     @DeleteMapping("/ternos/{id}")
-    public ResponseEntity<Boolean> deletarPeloId(@PathVariable Long id){
-        Boolean sinaliza = ternoDeleteService.deletarTernoPeloId(id);
-        return ResponseEntity.ok().body(sinaliza);
+    public ResponseEntity<Void> deletarPeloId(@PathVariable Long id){
+        ternoDeleteService.deletarTernoPeloId(id);
+        return ResponseEntity.noContent().build(); // Retorna status 204 (nenhum conteúdo ou erro), indicando que foi deletado com sucesso
     }
 }

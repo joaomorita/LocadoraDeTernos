@@ -17,16 +17,10 @@ public class TernoDeleteService {
     }
 
     // Método para deletar um terno
-    public Boolean deletarTernoPeloId(Long id) {
-        try {
-            // Verifica se o terno existe, senão lança exceção
-            ternoReadService.buscarTernoPeloId(id);
-            // Se chegar aqui, o terno foi encontrado, então pode deletar
-            ternoRepository.deleteById(id);
-            return true; // Deletou com sucesso
-        } catch (NoSuchElementException e) {
-            // Se o terno não for encontrado, retorna false
-            return false;
-        }
-    }    
+    public void deletarTernoPeloId(Long id) {
+        // Verifica se o terno existe, senão lança exceção
+        ternoReadService.buscarTernoPeloId(id);
+        // Se chegar aqui, o terno foi encontrado, então pode deletar
+        ternoRepository.deleteById(id);
+    }
 }
