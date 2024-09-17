@@ -1,9 +1,8 @@
-package br.com.locadoradeternos.api_rest_locadora.service;
+package br.com.locadoradeternos.api_rest_locadora.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import br.com.locadoradeternos.api_rest_locadora.model.Terno;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -13,7 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Set;
 
-public class TernoWriteServiceTest {
+public class TernoTest {
     private Validator validator;
 
     @BeforeEach
